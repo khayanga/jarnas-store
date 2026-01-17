@@ -84,7 +84,7 @@ const Product = () => {
           </span>
 
           <h2 className="font-serif text-4xl md:text-5xl text-purple-900 mb-6 tracking-wide">
-            Most Loved Scents
+            Best Seller Scents
           </h2>
 
           <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed">
