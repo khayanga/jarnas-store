@@ -73,8 +73,8 @@ export default function Page() {
     const phoneNumber = "254718260345";
     const message = encodeURIComponent(
       `Hello, I would like to check availability for:\n\n` +
-        `🧴 Product: ${product.name}\n` +
-        `💰 Price: ${product.price}\n\n` +
+        ` Product: ${product.name}\n` +
+        ` Price: ${product.price}\n\n` +
         `Is it currently in stock?`,
     );
 
