@@ -21,7 +21,7 @@ const HeaderBar = () => {
   const isActive = (href: string) => pathname === href;
 
   // WhatsApp link
-  const whatsappNumber = "+254725477482";
+  const whatsappNumber = "+254718260345";
   const whatsappLink = `https://wa.me/${whatsappNumber.replace(/\D/g, "")}`;
 
   return (

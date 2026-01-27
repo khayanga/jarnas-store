@@ -22,8 +22,8 @@ type Product = {
 const formatPrice = (price?: number | string) => {
   if (!price) return "—";
 
-  
-  const cleaned = typeof price === "string" ? price.replace(/[^\d.]/g, "") : price;
+  const cleaned =
+    typeof price === "string" ? price.replace(/[^\d.]/g, "") : price;
 
   const numPrice = Number(cleaned);
   if (isNaN(numPrice)) return "—";
@@ -33,8 +33,6 @@ const formatPrice = (price?: number | string) => {
     currency: "KES",
   }).format(numPrice);
 };
-
-
 
 const INITIAL_LIMIT = 10;
 export default function Page() {
@@ -60,7 +58,7 @@ export default function Page() {
           }
         }
       }
-    `
+    `,
       )
       .then((data) => {
         setCategories([
@@ -72,12 +70,12 @@ export default function Page() {
   }, []);
 
   const handleWhatsAppOrder = (product: Product) => {
-    const phoneNumber = "254725477482";
+    const phoneNumber = "254718260345";
     const message = encodeURIComponent(
       `Hello, I would like to check availability for:\n\n` +
         `🧴 Product: ${product.name}\n` +
         `💰 Price: ${product.price}\n\n` +
-        `Is it currently in stock?`
+        `Is it currently in stock?`,
     );
 
     window.open(`https://wa.me/${phoneNumber}?text=${message}`, "_blank");
@@ -114,12 +112,28 @@ export default function Page() {
           defaultValue="all"
           onValueChange={() => setVisibleCount(INITIAL_LIMIT)}
         >
-          <TabsList className="flex justify-center bg-violet-100/70 backdrop-blur mx-auto p-1 mb-16">
+          <TabsList
+            className="
+                flex w-full
+                overflow-x-auto
+                whitespace-nowrap
+                gap-2
+                bg-violet-100/70 backdrop-blur
+                p-1 mb-16
+                no-scrollbar
+              "
+          >
             {categories.map((cat) => (
               <TabsTrigger
                 key={cat._id}
                 value={cat.key}
-                className="rounded-md px-6 data-[state=active]:bg-white data-[state=active]:shadow data-[state=active]:text-purple-800"
+                className="
+                    shrink-0
+                    rounded-md px-6
+                    data-[state=active]:bg-white
+                    data-[state=active]:shadow
+                    data-[state=active]:text-purple-800
+                  "
               >
                 {cat.title}
               </TabsTrigger>
@@ -128,7 +142,7 @@ export default function Page() {
 
           {categories.map((cat) => {
             const filtered = products.filter(
-              (p) => cat.key === "all" || p.category?.key === cat.key
+              (p) => cat.key === "all" || p.category?.key === cat.key,
             );
 
             return (
