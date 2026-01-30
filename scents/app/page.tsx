@@ -15,15 +15,16 @@ export default function Home() {
           <Hero/>
 
         </AnimatedSection>
+        <AnimatedSection>
+          <Services/>
+
+        </AnimatedSection>
         
         <AnimatedSection>
           <Product/>
 
         </AnimatedSection>
-        <AnimatedSection>
-          <Services/>
-
-        </AnimatedSection>
+       
          <AnimatedSection>
           <Promotion/>
 
