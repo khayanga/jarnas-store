@@ -368,7 +368,7 @@ export default function Page() {
                 key={cat._id}
                 value={cat.key}
                 className="
-                  rounded-md px-4 py-3
+                  rounded-md px-3 py-3
                   text-sm sm:text-base
                   data-[state=active]:bg-white
                   data-[state=active]:shadow
